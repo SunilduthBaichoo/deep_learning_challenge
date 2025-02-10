@@ -34,11 +34,12 @@ The aim of this analysis is to design a neural network, or deep learning model, 
 
 ## Compiling, Training, and Evaluating the Model
 
-### **MODEL 1 : ** Keras Sequential model 1
+### **MODEL 1 :** Keras Sequential model 1
+- **Notebook :** Challenge21_AlphabetSoupCharity_model1.ipynb <br>
 
 How many neurons, layers, and activation functions did you select for your neural network model, and why? <br>
 
-input_feaures = 36
+- input_feaures = 36
 
 First Dense layer, including the input layer: 
 - units = 80 | activation = 'relu' | input_dim = input_features
@@ -68,11 +69,14 @@ To improve the model performance:
   - We can adjust the learning rate
   - We can increase the number of Epochs
 
+----------------------------------
+
 ### **Optimization MODEL Version 1 :** Keras Sequential optimized model 1
+- **Notebook :** Challenge21_AlphabetSoupCharity_Optimization_ver1.ipynb <br>
 
 How many neurons, layers, and activation functions did you select for your neural network model, and why? <br>
 
-input_feaures = 36
+- input_feaures = 36
 
 First Dense layer, including the input layer: 
 - units = 80 | activation = 'relu' | input_dim = input_features
@@ -104,8 +108,10 @@ To improve the model performance:
   - We can further increase the number of training Epochs 
   - This is expected to capture more details from the input features.
 
+------
 
 ### **Optimization MODEL Version 2 :** Keras Sequential optimized model 2
+- **Notebook :** Challenge21_AlphabetSoupCharity_Optimization_ver2.ipynb <br>
 
 How many neurons, layers, and activation functions did you select for your neural network model, and why? <br>
 
@@ -149,9 +155,9 @@ To improve the model performance, we can :
   - Use Leaky ReLU Instead of ReLU
     - ReLU can cause "dying neurons" where gradients become zero.
     - Leaky ReLU allows small negative slopes instead of setting them to zero.
-
+---
 ### **Optimization MODEL Version 3 :** Keras Sequential optimized model 3
-
+- **Notebook :** Challenge21_AlphabetSoupCharity_Optimization_ver3.ipynb <br>
 How many neurons, layers, and activation functions did you select for your neural network model, and why? <br>
 
 input_feaures = 36
@@ -182,12 +188,10 @@ Output Layer:
 - The training Loss shows a gradual decrease in loss but a fluctuating training accuracy between 73% and 74%.
 - The performance with LeakyReLU is not better than 'ReLU'
 - Target performance of 75 % not reached.
-
-**What steps did you take in your attempts to increase model performance?**
-The deep learning models do not seem to provide 
+---
 
 ## Summary: 
-- The overall best testing performance (Accuracy: 0.7284256815910339) was obtained by using the model 1 with the following architecture:<br>
+- The overall best testing performance (Accuracy: 0.7284256815910339 or 73%) was obtained by using the model 1 with the following architecture:<br>
 input_feaures = 36
 
     First Dense layer, including the input layer: 
@@ -199,18 +203,18 @@ input_feaures = 36
     Output Layer:
     - units = 1 | activation = 'sigmoid'
 
-- Attempts to optimize considered: 
+- Attempts for optimization considered: 
     - Increasing units in each layers and number of hidden layers, 
     - Increasing number of training epochs, 
     - Changing activation functions from 'ReLU' to 'LeakyReLU", 
-     using dropouts to prevent overfitting
+    - Using dropouts to prevent overfitting
     - Use of Batch Normalization for Faster Convergence
 - All the options did not improve the performance to above 75%.
 
 ### **Recomendation**
-- As our data is dataset is mostly numerical/tabular, XGBoost might outperform deep learning models. <br>
+- As our dataset is mostly numerical/tabular, XGBoost might outperform deep learning models. <br>
 
-- **Why XGBoost Instead of DNN?**
+- **Why XGBoost instead of DNN?**
     - Works exceptionally well for structured/tabular data.
     - Faster training and less hyperparameter tuning needed.
     - Feature importance analysis is easier compared to neural networks.
